@@ -2,6 +2,8 @@ package com.example.mohamedelnhrawy.marvelwalltask.network;
 
 import com.example.mohamedelnhrawy.marvelwalltask.utils.AppConstants;
 
+import java.util.concurrent.TimeUnit;
+
 import dagger.Module;
 import dagger.Provides;
 import okhttp3.OkHttpClient;
@@ -22,7 +24,8 @@ public class ApiModule {
     public OkHttpClient provideClient(){
         HttpLoggingInterceptor interceptor=new HttpLoggingInterceptor();
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-        return new OkHttpClient.Builder().addInterceptor(interceptor).build();
+        return new OkHttpClient.Builder().readTimeout(120, TimeUnit.SECONDS)
+                .connectTimeout(120, TimeUnit.SECONDS).addInterceptor(interceptor).build();
     }
 
     @Provides
