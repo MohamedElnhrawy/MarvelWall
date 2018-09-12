@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MarvelWallTask</string>
+    <string name="some_error">some thing went wrong</string>
+    <string name="checkconnection">please check your internet connection</string>
+</resources>
