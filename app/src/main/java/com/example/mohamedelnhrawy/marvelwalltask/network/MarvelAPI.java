@@ -20,8 +20,5 @@ import rx.Observable;
 public interface MarvelAPI {
 
     @GET("posts")
-    Call<ResponseBody> getMarvels();
-
-    @GET("posts")
     Observable<List<Marvel>> getMarvelsObservable();
 }
