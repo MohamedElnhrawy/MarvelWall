@@ -33,12 +33,8 @@ public class MainActivity extends BaseActivity implements MainActivityMVP.View, 
     @Inject
     MainActivityMVP.Presenter presenter;
 
-    @Inject
-    MarvelAPI marvelAPI;
-
     private MarvelListAdapter adapter;
     private  List<Marvel> marvelList=new ArrayList<>();
-
 
     @BindView(R.id.rv_marvellist)
     RecyclerView rv_marvellist;
@@ -81,7 +77,7 @@ public class MainActivity extends BaseActivity implements MainActivityMVP.View, 
 
         if (isNetworkConnected()){
             showLoading();
-            presenter.LoadData(marvelAPI,new ResponseCallback() {
+            presenter.LoadData(new ResponseCallback() {
                 @Override
                 public void onsuccess(Object object) {
                     marvelList= (List<Marvel>) object;

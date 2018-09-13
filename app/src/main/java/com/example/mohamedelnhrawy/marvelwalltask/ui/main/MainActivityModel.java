@@ -23,7 +23,7 @@ public class MainActivityModel implements MainActivityMVP.Model {
 
 
     @Override
-    public void getMarvelList(MarvelAPI marvelAPI, ResponseCallback responseCallback) {
-        repository.getResultsFromNetwork(marvelAPI,responseCallback);
+    public void getMarvelList( ResponseCallback responseCallback) {
+        repository.getResultsFromNetwork(responseCallback);
     }
 }

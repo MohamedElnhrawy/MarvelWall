@@ -26,14 +26,14 @@ public interface MainActivityMVP {
     }
 
     interface Presenter{
-        void LoadData(MarvelAPI marvelAPI, ResponseCallback responseCallback);
+        void LoadData(ResponseCallback responseCallback);
         void setView(MainActivityMVP.View view);
         void onDetach();
     }
 
     interface Model{
 
-        void getMarvelList(MarvelAPI marvelAPI,ResponseCallback responseCallback);
+        void getMarvelList(ResponseCallback responseCallback);
     }
 
 }

@@ -27,7 +27,7 @@ public class MainModule {
     }
 
     @Provides
-    public MainActivityRepository ProvideMainActivityRepository(){
-        return new Memoryrepository();
+    public MainActivityRepository ProvideMainActivityRepository(MarvelAPI marvelAPI){
+        return new Memoryrepository(marvelAPI);
     }
 }

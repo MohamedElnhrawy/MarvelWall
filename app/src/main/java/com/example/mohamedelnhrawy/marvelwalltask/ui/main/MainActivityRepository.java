@@ -13,6 +13,6 @@ import com.example.mohamedelnhrawy.marvelwalltask.network.callback.ResponseCallb
 
 public interface MainActivityRepository  {
 
-    void getResultsFromNetwork(MarvelAPI marvelAPI, ResponseCallback responseCallback);
+    void getResultsFromNetwork( ResponseCallback responseCallback);
 
 }

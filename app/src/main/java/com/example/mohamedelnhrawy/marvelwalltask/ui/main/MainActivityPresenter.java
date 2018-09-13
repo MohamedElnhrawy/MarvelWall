@@ -22,8 +22,8 @@ public class MainActivityPresenter implements MainActivityMVP.Presenter {
     }
 
     @Override
-    public void LoadData(MarvelAPI marvelAPI,ResponseCallback responseCallback) {
-     model.getMarvelList(marvelAPI,responseCallback);
+    public void LoadData(ResponseCallback responseCallback) {
+     model.getMarvelList(responseCallback);
     }
 
 

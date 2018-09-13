@@ -10,6 +10,8 @@ import com.example.mohamedelnhrawy.marvelwalltask.network.callback.ResponseCallb
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
+
 import rx.Observable;
 import rx.Observer;
 import rx.Subscriber;
@@ -23,11 +25,16 @@ import rx.schedulers.Schedulers;
 
 public class Memoryrepository implements MainActivityRepository {
 
+    MarvelAPI marvelAPI1;
 
+    @Inject
+    public Memoryrepository(MarvelAPI marvelAPI1) {
+        this.marvelAPI1 = marvelAPI1;
+    }
 
     @Override
-    public void getResultsFromNetwork(MarvelAPI marvelAPI,final ResponseCallback responseCallback) {
-        Observable<List<Marvel>> observable=marvelAPI.getMarvelsObservable();
+    public void getResultsFromNetwork(final ResponseCallback responseCallback) {
+        Observable<List<Marvel>> observable=marvelAPI1.getMarvelsObservable();
         observable.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Subscriber<List<Marvel>>() {
